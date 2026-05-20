@@ -2,7 +2,7 @@
    PHOENIX RESTAURANT — script.js
 ────────────────────────────────────── */
 
-const API_URL = "http://localhost:3000";
+const API_URL = "https://phoenixrestoran.onrender.com/";
 
 /* ─── CURSOR LIGHT ─── */
 const light = document.querySelector(".cursor-light");
