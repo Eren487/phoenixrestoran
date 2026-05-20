@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phoenix Restaurant</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="cursor-light"></div>
+<div class="grain"></div>
+
+<!-- INTRO -->
+<div id="intro" class="intro">
+  <div class="intro-inner">
+    <div class="intro-logo-ring"></div>
+    <img src="Phoenix-Transparent.png" class="intro-img" alt="Phoenix">
+    <h1 class="intro-title">PHOENIX</h1>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<header class="navbar" id="navbar">
+  <div class="brand">
+    <img src="Phoenix-Transparent.png" alt="Phoenix">
+    <span>Phoenix</span>
+  </div>
+  <nav>
+    <a href="#story"   class="nav-link"><span>01</span>Hikaye</a>
+    <a href="#menu"    class="nav-link"><span>02</span>Menü</a>
+    <a href="#reviews" class="nav-link"><span>03</span>Yorumlar</a>
+  </nav>
+  <button class="btn-rezervasyon" onclick="openModal()">
+    <span class="btn-text">Rezervasyon</span>
+    <div class="btn-bg"></div>
+  </button>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-lines"><div></div><div></div><div></div></div>
+  <div class="hero-text">
+    <p class="hero-eyebrow">Fine Dining · İstanbul</p>
+    <h1 class="hero-title">
+      <span>Lezzetin</span>
+      <em>Yeniden</em>
+      <span>Doğduğu Yer</span>
+    </h1>
+    <p class="hero-sub">Modern Türk mutfağı ile Fransız tekniklerinin buluşması</p>
+    <button class="hero-btn" onclick="openModal()">
+      Rezervasyon Yap
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  <div class="hero-scroll-hint">
+    <span>Kaydır</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section id="story" class="section story">
+  <div class="story-label">Hikayemiz</div>
+  <div class="story-grid">
+    <div class="story-text">
+      <h2>Külden Doğan<br><em>Bir Lezzet</em></h2>
+      <p>Phoenix, küllerinden yeniden doğan efsanevi kuşun sembolüdür. Restoranımız, geleneksel Türk mutfağını çağdaş tekniklerle harmanlayarak her tabağı yeniden doğuşun bir sanat eserine dönüştürür.</p>
+      <p>2018'den bu yana İstanbul'un kalbinde, her misafirimize unutulmaz bir deneyim sunuyoruz.</p>
+      <div class="story-stats">
+        <div class="stat"><strong>6+</strong><span>Yıl</span></div>
+        <div class="stat"><strong>12</strong><span>Ödül</span></div>
+        <div class="stat"><strong>50K+</strong><span>Misafir</span></div>
+      </div>
+    </div>
+    <div class="story-visual">
+      <div class="story-img-wrap">
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800" alt="Restoran">
+        <div class="story-img-accent"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section id="menu" class="section dark menu-section">
+  <div class="menu-header">
+    <div class="section-label">Menümüz</div>
+    <h2>Şefin <em>Önerileri</em></h2>
+  </div>
+
+  <!-- ÖZEL GÜN -->
+  <div class="ozel-gun-wrap">
+    <div class="ozel-gun-label">Özel Gününüz İçin Menü Önerisi</div>
+    <div class="ozel-gun-bar">
+      <button class="ozel-btn active" data-gun="normal">Normal Ziyaret</button>
+      <button class="ozel-btn" data-gun="dogumgunu">🎂 Doğum Günü</button>
+      <button class="ozel-btn" data-gun="evlilik">💍 Yıldönümü</button>
+      <button class="ozel-btn" data-gun="romantik">🕯️ Romantik Akşam</button>
+      <button class="ozel-btn" data-gun="is">💼 İş Yemeği</button>
+    </div>
+    <div id="ozelGunOneri" class="ozel-gun-oneri" style="display:none;"></div>
+  </div>
+
+  <!-- KATEGORİ SEKME MENÜSÜ -->
+  <div class="menu-tabs-wrap">
+    <div class="menu-tabs">
+      <button class="menu-tab active" data-tab="ara-sicak">
+        <span class="tab-icon">🥘</span>
+        <span>Ara Sıcak</span>
+      </button>
+      <button class="menu-tab" data-tab="ana-yemek-et">
+        <span class="tab-icon">🥩</span>
+        <span>Et Yemekleri</span>
+      </button>
+      <button class="menu-tab" data-tab="ana-yemek-deniz">
+        <span class="tab-icon">🐟</span>
+        <span>Deniz Ürünleri</span>
+      </button>
+      <button class="menu-tab" data-tab="vejetaryen">
+        <span class="tab-icon">🥗</span>
+        <span>Vejetaryen</span>
+      </button>
+      <button class="menu-tab" data-tab="tatli">
+        <span class="tab-icon">🍮</span>
+        <span>Tatlılar</span>
+      </button>
+      <button class="menu-tab" data-tab="alkolsuz">
+        <span class="tab-icon">🥤</span>
+        <span>Alkolsüz</span>
+      </button>
+      <button class="menu-tab" data-tab="alkol">
+        <span class="tab-icon">🍷</span>
+        <span>Alkollü</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- KATEGORİ PANELLERİ -->
+
+  <!-- ARA SICAK -->
+  <div class="menu-panel active" data-panel="ara-sicak">
+    <div class="menu-grid">
+      <div class="card"><div class="card-inner"><div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1541014741259-de529411b96a?w=600" alt="Bruschetta"><div class="card-overlay"></div></div><div class="card-info"><div class="card-tag">Ara Sıcak</div><h3>Bruschetta</h3><p>Közlenmiş Domates • Fesleğen • Parmesan • Zeytinyağı</p><span class="card-price">₺180</span></div></div></div>
+      <div class="card"><div class="card-inner"><div class="card-img-wrap"><img src="https://i.ytimg.com/vi/_zwBsdBdgLU/maxresdefault.jpg" alt="Kalamar"><div class="card-overlay"></div></div><div class="card-info"><div class="card-tag">Ara Sıcak</div><h3>Kalamar Tava</h3><p>Çıtır Kalamar • Limon Aioli • Taze Dereotu</p><span class="card-price">₺350</span></div></div></div>
+      <div class="card"><div class="card-inner"><div class="card-img-wrap"><img src="https://i.ytimg.com/vi/gOVhnZAVmlA/maxresdefault.jpg" alt="Tart"><div class="card-overlay"></div></div><div class="card-info"><div class="card-tag">Ara Sıcak</div><h3>Trüflü Mantar Tart</h3><p>Karamelize Mantar • Trüf Yağı • Gruyère Peyniri</p><span class="card-price">₺260</span></div></div></div>
+      <div class="card"><div class="card-inner"><div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1551248429-40975aa4de74?w=600" alt="Çorba"><div class="card-overlay"></div></div><div class="card-info"><div class="card-tag">Ara Sıcak</div><h3>Şef Çorbası</h3><p>Günlük Şef Çorbası • Taze Ekmek • Tereyağı</p><span class="card-price">₺160</span></div></div></div>
+      <div class="card"><div class="card-inner"><div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1572695157366-5e585ab2b69f?w=600" alt="Foie Gras"><div class="card-overlay"></div></div><div class="card-info"><div class="card-tag">Ara Sıcak</div><h3>Foie Gras</h3><p>Kaz Ciğeri • Brioche • Elma Konfiti • Balzamik</p><span class="card-price">₺420</span></div></div></div>
+      <div class="card"><div class="card-inner"><div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1559058789-672da06263d8?w=600" alt="Hamsi"><div class="card-overlay"></div></div><div class="card-info"><div class="card-tag">Ara Sıcak</div><h3>Hamsi Tava</h3><p>Taze Hamsi • Mısır Unu • Limon • Soğan Salatası</p><span class="card-price">₺300</span></div></div></div>
+    </div>
+  </div>
+
+  <!-- ET YEMEKLERİ -->
+  <div class="menu-panel" data-panel="ana-yemek-et">
+    <div class="menu-grid">
+      <div class="card"><div class="card-inner"><div class="card-img-wrap"><img src="https://www.nusr-et.com.tr/img/hero.jpg" alt="Bonfile"><div class="card-overlay"></div></div><div class="card-info"><div class="card-tag">Et</div><h3>Bonfile</h3><p>Izgara Dana • Trüf Sos • Kök Sebzeler</p><span class="card-price">₺680</span></div></div></div>
+      <div class="card"><div class="card-inner"><div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200&auto=format&fit=crop" alt="Kuzu"><div class="card-overlay"></div></div><div class="card-info"><div class="card-tag">Et</div><h3>Kuzu Pirzola</h3><p>Fırın Kuzu • Biberiye Sos • Patates Püre</p><span class="card-price">₺720</span></div></div></div>
+      <div class="card"><div class="card-inner"><div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=600" alt="Ribeye"><div class="card-overlay"></div></div><div class="card-info"><div class="card-tag">Et</div><h3>Ribeye Steak</h3><p>400g Dry-Aged Dana • Kemik İliği Tereyağı • Patates Graten</p><span class="card-price">₺890</span></div></div></div>
+      <div class="card"><div class="card-inner"><div class="card-img-wrap"><img src="https://i.lezzet.com.tr/images-xxlarge-recipe/confit-de-canard-1a86c021-f1a4-418a-a424-4633d719c2d4.jpg" alt="Ördek"><div class="card-overlay"></div></div><div class="card-info"><div class="card-tag">Et</div><h3>Ördek Konfi</h3><p>Yavaş Pişirilmiş Ördek • Portakal Sos • Mercimek Püre</p><span class="card-price">₺760</span></div></div></div>
+      <div class="card"><div class="card-inner"><div class="card-img-wrap"><img src="https://i.ytimg.com/vi/-bmMm-MAfE4/maxresdefault.jpg" alt="Dana Yanağı"><div class="card-overlay"></div></div><div class="card-info"><div class="card-tag">Et</div><h3>Dana Yanağı</h3><p>12 Saat Yavaş Pişirilmiş • Kırmızı Şarap Sos • Kök Sebze Püresi</p><span class="card-price">₺840</span></div></div></div>
+      <div class="card"><div class="card-inner"><div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1588168333986-5078d3ae3976?w=600" alt="Tavuk"><div class="card-overlay"></div></div><div class="card-info"><div class="card-tag">Et</div><h3>Cornish Tavuk</h3><p>Fırın Tavuk • Limon Kekik • Kavrulmuş Sarımsak • Ratatouille</p><span class="card-price">₺560</span></div></div></div>
+    </div>
+  </div>
+
+  <!-- DENİZ ÜRÜNLERİ -->
+  <div class="menu-panel" data-panel="ana-yemek-deniz">
+    <div class="menu-grid">
+      <div class="card"><div class="card-inner"><div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1560717845-968823efbee1?w=600" alt="Levrek"><div class="card-overlay"></div></div><div class="card-info"><div class="card-tag">Deniz Ürünleri</div><h3>Levrek</h3><p>Izgara Levrek • Limon Sos • Taze Otlar</p><span class="card-price">₺520</span></div></div></div>
+      <div class="card"><div class="card-inner"><div class="card-img-wrap"><img src="https://cdn.karaca.com/cms/guevecte_karides_b43ade2f74.webp" alt="Karides"><div class="card-overlay"></div></div><div class="card-info"><div class="card-tag">Deniz Ürünleri</div><h3>Karides Güveç</h3><p>Taze Karides • Domates • Feta Peyniri</p><span class="card-price">₺480</span></div></div></div>
+      <div class="card"><div class="card-inner"><div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1611599537845-1c7aca0091c0?w=600" alt="Somon"><div class="card-overlay"></div></div><div class="card-info"><div class="card-tag">Deniz Ürünleri</div><h3>Somon Teriyaki</h3><p>Atlantik Somonu • Teriyaki Sos • Edamame • Suşi Pirinci</p><span class="card-price">₺560</span></div></div></div>
+      <div class="card"><div class="card-inner"><div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1559847844-5315695dadae?q=80&w=1200&auto=format&fit=crop" alt="Ahtapot"><div class="card-overlay"></div></div><div class="card-info"><div class="card-tag">Deniz Ürünleri</div><h3>Izgara Ahtapot</h3><p>Akdeniz Ahtapotu • Kapari Sos • Közlenmiş Biber</p><span class="card-price">₺620</span></div></div></div>
+      <div class="card"><div class="card-inner"><div class="card-img-wrap"><img src="https://d17wu0fn6x6rgz.cloudfront.net/img/w/tarif/mgt/08-midye-tava.webp" alt="Midye"><div class="card-overlay"></div></div><div class="card-info"><div class="card-tag">Deniz Ürünleri</div><h3>Midye Tava</h3><p>Taze Midye • Sarımsaklı Tereyağı • Maydanoz • Limon</p><span class="card-price">₺360</span></div></div></div>
+      <div class="card"><div class="card-inner"><div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=600" alt="Ton Balığı"><div class="card-overlay"></div></div><div class="card-info"><div class="card-tag">Deniz Ürünleri</div><h3>Ton Balığı Tataki</h3><p>Taze Ton • Susam • Wasabi Aioli • Turp Salatası</p><span class="card-price">₺640</span></div></div></div>
+    </div>
+  </div>
+
+  <!-- VEJETARİYEN -->
+  <div class="menu-panel" data-panel="vejetaryen">
+    <div class="menu-grid">
+      <div class="card"><div class="card-inner"><div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=600" alt="Trüf Makarna"><div class="card-overlay"></div></div><div class="card-info"><div class="card-tag">Vejetaryen</div><h3>Trüf Makarna</h3><p>El Yapımı Makarna • Trüf Yağı • Parmesan</p><span class="card-price">₺440</span></div></div></div>
+      <div class="card"><div class="card-inner"><div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600" alt="Salata"><div class="card-overlay"></div></div><div class="card-info"><div class="card-tag">Vejetaryen</div><h3>Şef Salatası</h3><p>Mevsim Yeşillikleri • Nar • Keçi Peyniri • Bal Hardal Sos</p><span class="card-price">₺320</span></div></div></div>
+      <div class="card"><div class="card-inner"><div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1476124369491-e7addf5db371?q=80&w=1200&auto=format&fit=crop" alt="Risotto"><div class="card-overlay"></div></div><div class="card-info"><div class="card-tag">Vejetaryen</div><h3>Mantar Risotto</h3><p>Arborio Pirinci • Porcini Mantar • Parmesan • Kekik</p><span class="card-price">₺380</span></div></div></div>
+      <div class="card"><div class="card-inner"><div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=600" alt="Köri"><div class="card-overlay"></div></div><div class="card-info"><div class="card-tag">Vejetaryen</div><h3>Sebze Körisi</h3><p>Mevsim Sebzeleri • Hint Köri • Hindistan Cevizi Sütü • Basmati</p><span class="card-price">₺340</span></div></div></div>
+      <div class="card"><div class="card-inner"><div class="card-img-wrap"><img src="https://tariftenevar.com/cdn/tarifler/Firefly_Mushroom_and_Truffle_Oil_Pizza_51889_(1).jpg" alt="Pizza"><div class="card-overlay"></div></div><div class="card-info"><div class="card-tag">Vejetaryen</div><h3>Trüf Pizzası</h3><p>İnce Hamur • Trüf Krema • Rokfor • Roka • Parmesan</p><span class="card-price">₺400</span></div></div></div>
+      <div class="card"><div class="card-inner"><div class="card-img-wrap"><img src="https://cdn.myikas.com/images/732e3867-9583-4a6a-bc96-05b48cea03c7/87cc6cfe-a409-4047-9b20-edfa09b08814/image_1080.webp" alt="Gözleme"><div class="card-overlay"></div></div><div class="card-info"><div class="card-tag">Vejetaryen</div><h3>Şef Gözlemesi</h3><p>El Açması Yufka • Ispanak Peynir • Kavrulmuş Ceviz</p><span class="card-price">₺280</span></div></div></div>
+    </div>
+  </div>
+
+  <!-- TATLILAR -->
+  <div class="menu-panel" data-panel="tatli">
+    <div class="menu-grid">
+      <div class="card"><div class="card-inner"><div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?q=80&w=1200&auto=format&fit=crop" alt="Fondant"><div class="card-overlay"></div></div><div class="card-info"><div class="card-tag">Tatlı</div><h3>Çikolatalı Fondant</h3><p>Sıcak Çikolata • Vanilya Dondurma • Frambuaz</p><span class="card-price">₺280</span></div></div></div>
+      <div class="card"><div class="card-inner"><div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=600" alt="Tiramisu"><div class="card-overlay"></div></div><div class="card-info"><div class="card-tag">Tatlı</div><h3>Tiramisu</h3><p>Mascarpone • Espresso • Kakao • Ladyfinger</p><span class="card-price">₺240</span></div></div></div>
+      <div class="card"><div class="card-inner"><div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600" alt="Crème Brûlée"><div class="card-overlay"></div></div><div class="card-info"><div class="card-tag">Tatlı</div><h3>Crème Brûlée</h3><p>Vanilla Bean Krema • Karamelize Şeker • Taze Çilek</p><span class="card-price">₺300</span></div></div></div>
+      <div class="card"><div class="card-inner"><div class="card-img-wrap"><img src="https://static.ticimax.cloud/cdn-cgi/image/width=0,quality=0/54612/uploads/urunresimleri/buyuk/premium-fistikli-baklava-ozel-tepsi-1-d-a4c0.jpg" alt="Baklava"><div class="card-overlay"></div></div><div class="card-info"><div class="card-tag">Tatlı</div><h3>Phoenix Baklavası</h3><p>El Açması Yufka • Antep Fıstığı • Gül Suyu • Kaymak</p><span class="card-price">₺300</span></div></div></div>
+      <div class="card"><div class="card-inner"><div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1519915028121-7d3463d20b13?w=600" alt="Dondurma"><div class="card-overlay"></div></div><div class="card-info"><div class="card-tag">Tatlı</div><h3>Artisan Dondurma</h3><p>3 Top Seçim • Taze Meyve • Karamel Sos • Waffle</p><span class="card-price">₺240</span></div></div></div>
+      <div class="card"><div class="card-inner"><div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600" alt="Cheesecake"><div class="card-overlay"></div></div><div class="card-info"><div class="card-tag">Tatlı</div><h3>Cheesecake</h3><p>New York Usulü • Çilek Sos • Graham Kraker Tabanı</p><span class="card-price">₺300</span></div></div></div>
+    </div>
+  </div>
+
+  <!-- ALKOLSÜZ -->
+  <div class="menu-panel" data-panel="alkolsuz">
+    <div class="menu-grid">
+      <div class="card"><div class="card-inner"><div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=600" alt="Mocktail"><div class="card-overlay"></div></div><div class="card-info"><div class="card-tag">Alkolsüz</div><h3>Phoenix Mocktail</h3><p>Hibiskus • Limon • Zencefil • Karbonatli Su</p><span class="card-price">₺250</span></div></div></div>
+      <div class="card"><div class="card-inner"><div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=1200&auto=format&fit=crop" alt="Kahve"><div class="card-overlay"></div></div><div class="card-info"><div class="card-tag">Alkolsüz</div><h3>Türk Kahvesi</h3><p>Özel Harman • Türk Lokumu • Köpüklü Su</p><span class="card-price">₺100</span></div></div></div>
+      <div class="card"><div class="card-inner"><div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1523371054106-bbf80586c38c?q=80&w=1200&auto=format&fit=crop" alt="Limonata"><div class="card-overlay"></div></div><div class="card-info"><div class="card-tag">Alkolsüz</div><h3>Özel Limonata</h3><p>Taze Limon • Nane • Şeftali • Crushed Ice</p><span class="card-price">₺100</span></div></div></div>
+      <div class="card"><div class="card-inner"><div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=600" alt="Şerbet"><div class="card-overlay"></div></div><div class="card-info"><div class="card-tag">Alkolsüz</div><h3>Osmanlı Şerbeti</h3><p>Gül • Tarçın • Karanfil • Bal</p><span class="card-price">₺150</span></div></div></div>
+      <div class="card"><div class="card-inner"><div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600" alt="Espresso"><div class="card-overlay"></div></div><div class="card-info"><div class="card-tag">Alkolsüz</div><h3>Espresso Seçkisi</h3><p>Single Origin • Americano, Latte veya Cappuccino</p><span class="card-price">₺230</span></div></div></div>
+      <div class="card"><div class="card-inner"><div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1556881286-fc6915169721?w=600" alt="Çay"><div class="card-overlay"></div></div><div class="card-info"><div class="card-tag">Alkolsüz</div><h3>Bitki Çayları</h3><p>Ada Çayı • Ihlamur • Bergamot • Nane Limon</p><span class="card-price">₺160</span></div></div></div>
+    </div>
+  </div>
+
+  <!-- ALKOLLÜ -->
+  <div class="menu-panel" data-panel="alkol">
+    <div class="menu-grid">
+      <div class="card"><div class="card-inner"><div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=600" alt="Şarap"><div class="card-overlay"></div></div><div class="card-info"><div class="card-tag">Alkollü</div><h3>Şarap Seçkisi</h3><p>Özenle Seçilmiş Yerli & Yabancı Şaraplar • Sommelier Önerisi</p><span class="card-price">₺400+</span></div></div></div>
+      <div class="card"><div class="card-inner"><div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=600" alt="Cocktail"><div class="card-overlay"></div></div><div class="card-info"><div class="card-tag">Alkollü</div><h3>Phoenix Signature Cocktail</h3><p>Bourbon • Trüf Tütsüsü • Bal • Bitter • Portakal Kabuğu</p><span class="card-price">₺500</span></div></div></div>
+      <div class="card"><div class="card-inner"><div class="card-img-wrap"><img src="https://www.liquor.com/thmb/lbwu9mR7WPYq36cWAEbiCvGM2tQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/neighborhood-negroni-1200x628-fb-d5b216eacafc4c56abb866bae231bd83.jpg" alt="Negroni"><div class="card-overlay"></div></div><div class="card-info"><div class="card-tag">Alkollü</div><h3>Negroni</h3><p>Gin • Campari • Sweet Vermouth • Portakal Kabuğu</p><span class="card-price">₺300</span></div></div></div>
+      <div class="card"><div class="card-inner"><div class="card-img-wrap"><img src="https://harbiyiyorum.com/wp-content/uploads/sampanya-ft.jpg" alt="Şampanya"><div class="card-overlay"></div></div><div class="card-info"><div class="card-tag">Alkollü</div><h3>Şampanya</h3><p>Moët & Chandon • Brut Imperial • Soğuk Servis</p><span class="card-price">₺600</span></div></div></div>
+      <div class="card"><div class="card-inner"><div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1527281400683-1aae777175f8?q=80&w=1200&auto=format&fit=crop" alt="Viski"><div class="card-overlay"></div></div><div class="card-info"><div class="card-tag">Alkollü</div><h3>Viski Seçkisi</h3><p>Single Malt Scotch • Blended • Bourbon • Buz veya Sade</p><span class="card-price">₺500+</span></div></div></div>
+      <div class="card"><div class="card-inner"><div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=1200&auto=format&fit=crop"" alt="Bira"><div class="card-overlay"></div></div><div class="card-info"><div class="card-tag">Alkollü</div><h3>Craft Bira</h3><p>Yerel Mikro Bira • IPA, Lager veya Stout Seçimi</p><span class="card-price">₺300</span></div></div></div>
+    </div>
+  </div>
+
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="section reviews-section">
+  <div class="section-label">Yorumlar</div>
+  <h2>Misafirlerimiz <em>Ne Diyor?</em></h2>
+
+  <div class="rating-summary" id="ratingSummary"></div>
+
+  <div class="review-form-wrap">
+    <h3>Yorumunuzu Paylaşın</h3>
+    <div class="review-form">
+      <input id="reviewName" type="text" placeholder="Adınız Soyadınız">
+      <textarea id="reviewText" placeholder="Deneyiminizi paylaşın..."></textarea>
+      <div class="star-input">
+        <span>Puanınız:</span>
+        <div class="stars-select" id="starsSelect">
+          <span data-val="1">★</span>
+          <span data-val="2">★</span>
+          <span data-val="3">★</span>
+          <span data-val="4">★</span>
+          <span data-val="5">★</span>
+        </div>
+        <span id="starLabel" class="star-label">Seçiniz</span>
+      </div>
+      <div id="reviewMsg" class="form-msg"></div>
+      <button class="btn-confirm review-submit" onclick="submitReview()">
+        <span>Yorumu Gönder</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="reviews-list" id="reviewsList">
+    <div class="reviews-loading">Yorumlar yükleniyor...</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="Phoenix-Transparent.png" alt="Phoenix">
+      <span>PHOENIX</span>
+      <p>Lezzetin Yeniden Doğduğu Yer</p>
+    </div>
+    <div class="footer-info">
+      <p>Bağcılar Cd. No:42, Beşiktaş</p>
+      <p>İstanbul, Türkiye</p>
+      <p>+90 212 000 00 00</p>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2025 Phoenix Restaurant. Tüm hakları saklıdır.</div>
+</footer>
+
+<!-- REZERVASYON MODAL -->
+<div id="modal" class="modal">
+  <div class="modal-backdrop" onclick="closeModal()"></div>
+  <div class="box">
+    <div class="box-header">
+      <h2>Rezervasyon</h2>
+      <p>Masanızı şimdi ayırtın</p>
+      <button class="close-btn" onclick="closeModal()">
+        <svg width="18" height="18" viewBox="0 0 18 18"><path d="M2 2l14 14M16 2L2 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div class="form-body">
+      <div class="form-group">
+        <label>Ad Soyad</label>
+        <input id="rName" type="text" placeholder="Adınızı girin" autocomplete="off">
+      </div>
+      <div class="form-group">
+        <label>E-posta</label>
+        <input id="rEmail" type="email" placeholder="ornek@email.com" autocomplete="off">
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Tarih</label>
+          <input id="rDate" type="date">
+        </div>
+        <div class="form-group">
+          <label>Saat</label>
+          <input id="rTime" type="time">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Kişi Sayısı</label>
+        <div class="guest-counter">
+          <button type="button" onclick="changeGuest(-1)">−</button>
+          <span id="guestCount">2</span>
+          <button type="button" onclick="changeGuest(1)">+</button>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Özel Gün <em>(isteğe bağlı)</em></label>
+        <select id="rOzelGun">
+          <option value="">Seçiniz</option>
+          <option value="dogumgunu">Doğum Günü</option>
+          <option value="evlilik">Yıldönümü</option>
+          <option value="romantik">Romantik Akşam</option>
+          <option value="is">İş Yemeği</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Özel İstek <em>(isteğe bağlı)</em></label>
+        <textarea id="rNote" placeholder="Alerji, özel süsleme vb."></textarea>
+      </div>
+    </div>
+    <div id="formMsg" class="form-msg"></div>
+    <div class="box-footer">
+      <button class="btn-confirm" id="confirmBtn" onclick="submitReservation()">
+        <span>Rezervasyonu Onayla</span>
+        <div class="btn-loader" id="btnLoader"></div>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div id="toast" class="toast">
+  <svg width="18" height="18" viewBox="0 0 18 18"><path d="M3 9l4 4 8-8" stroke="#d4af37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+  <span id="toastMsg">İşlem başarılı!</span>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
